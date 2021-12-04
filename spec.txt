@@ -1,0 +1,14 @@
+You will create a social media platform (like Instagram) based on the skills you are learning using Django. 
+Be as creative as you can! Requirements are:
+
+1) users should be able to register to create an account
+
+2) They should be able to post images and captions
+
+3) Allow approved users to view, comment and rate their images
+
+This tutorial will be a help to upload images in Django - https://djangocentral.com/uploading-images-with-django/ (Links to an external site.)
+
+Submit your GIT repository URL for building your MyInsta project. 
+NOTE: you can 'submit' this assignment as soon as you have a repository. 
+You can keep editing your project and updating the repository but the URL will still be the same.

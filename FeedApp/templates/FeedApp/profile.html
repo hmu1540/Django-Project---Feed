@@ -1,0 +1,24 @@
+{% extends 'FeedApp/base.html' %}
+{% load bootstrap4 %}
+<!-- can aacess all formatting inside bootstrap4, there are various classes, that can be specified e.g. to the button,  to make page looks clean and nice -->
+{% load crispy_form_tags %}
+<!-- make page looks clean and nice -->
+
+{% block content %}
+
+<h1>
+    <p>My Profile:</p>
+</h1>
+
+<form action="{% url 'FeedApp:profil' %}" method='post'>
+    {% csrf_token %}
+    <!--to make sure there is no malicious code -->
+    {{ form |crispy}}
+    <!-- load form with crispy-->
+    <br><br> <!-- represnet a line break-->
+    <button name="submitt" class="btn btn-outline-primary">Update</button>
+    <!-- button has a blue outline and becomes dark blue when hover over it-->
+</form>
+
+
+{% endblock content %}

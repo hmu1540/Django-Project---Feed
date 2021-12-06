@@ -1,0 +1,35 @@
+{% extends 'FeedApp/base.html' %}
+{% load bootstap4 %}
+
+{% block content %}
+
+<h1>
+    <p> Posts</p>
+</h1>
+<form method="post">
+    {% csrf_token %}
+    <table style="font-size: 25px;width: 100%;">
+
+        {% for p,c,l in zipped_list %}
+        <tr style="border: 1px solid black;padding: 6px;">
+            <td>{{p.username}}:&nbsp {{ p }} <br>
+                {% if p.image %}
+                <img src="{{p.image.url}}" class="img-thumbnail" style="max-height: 300px;" alt="">
+                {% endif %}
+            </td>
+        <tr style="border: 1px solid black;padding: 6px;">
+            <td>{{p.date_added}}</td>
+            <td>
+                <button type="submit" name="like" value={{p.id}} style="background-color: transparent;border: none;">
+                    Likes: &nbsp {{ l }} &nbsp&nbsp&nbsp
+                </button>
+            </td>
+            <td>Comments: &nbsp <a href="{% url 'FeedApp:comments' p.id %}">{{ c }} </a> &nbsp&nbsp</td>
+        </tr>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</form>
+{% endblock content %}

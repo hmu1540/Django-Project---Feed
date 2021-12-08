@@ -1,0 +1,16 @@
+{% extends "FeedApp/base.html" %}
+
+{% block content %}
+
+<form action="{% url 'users:register' %}" method='post'>
+    <!-- the format of url????-->
+    {% csrf_token %}
+    <!-- protect -->
+    {{ form.as_p }}
+
+    <button name='submit'>Register</button> <!-- two names?????????/-->
+    <input type="hidden" name="next" value="{% url 'FeedApp:index' %}'" />
+    <!-- since we already redirect in views functions, do we need to specify next step in template>-->
+</form>
+
+{% endblock content %}

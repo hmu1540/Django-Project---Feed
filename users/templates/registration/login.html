@@ -1,0 +1,21 @@
+{% extends "FeedApp/base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form action="{% url 'users:login' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">Log in</button>
+
+    <input type="hidden" name="next" value="{% url 'FeedApp:index' %}" />
+    <!-- what's the input for? hit the submit buton, redirect to index, b/c can't access the views function -->
+
+</form>
+
+
+{% endblock content %}

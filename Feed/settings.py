@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     #created apps
     'FeedApp',
     'users',
+    # third part
+    'bootstrap4',
+    'crispy_forms',
     #built-in apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4',
+    
 ]
 
 MIDDLEWARE = [
@@ -125,3 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT  = 'images'
+
+
+import django_heroku
+django_heroku.settings(locals())

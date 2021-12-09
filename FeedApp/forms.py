@@ -3,13 +3,13 @@ from .models import Post, Profile, Relationship
 
 class PostForm(forms.ModelForm):
     class Meta:
-        mdoel = Post
+        model = Post
         fields = ['description', 'image'] 
         labels = {'description': "What would you like to say?"} #blank form labels???
     
 class ProfileForm(forms.ModelForm):
     class Meta:
-        mdoel = Profile
+        model = Profile
         fields = ['first_name', 'last_name', 'email', 'dob', 'bio'] # fields displayed on the webpage
         labels = {'first_name': 'First Name', 
                     'last_name': 'Last Name', 
@@ -19,7 +19,7 @@ class ProfileForm(forms.ModelForm):
 
 class RelationshipForm(forms.ModelForm):
     class Meta:
-        mdoel = Relationship
+        model = Relationship
         fields = '__all__'
         labels = {
             'sender': 'Accept friend request from:',

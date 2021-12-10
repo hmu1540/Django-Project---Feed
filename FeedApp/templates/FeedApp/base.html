@@ -42,20 +42,7 @@
                         <a class="nav-link" href="{% url 'FeedApp:friendsfeed' %}">Friends Feed</a>
                     </li>
 
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login' %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login' %}">Friend Request</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login' %}">My Feed</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login' %}">Friends Feed</a>
-                    </li>
 
                     {% endif %}
                 </ul>
